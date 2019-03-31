@@ -4,24 +4,27 @@ objectives = []
 
 def daily_start():
 
-    now = datetime.date.today()
-    #pass # Objective: find how to write this timestamp in a file. Til then, I'll store everything in a list.
+    mylog = open('mylog.txt',mode='a')
+    now = str(datetime.date.today())
+    mylog.write("\n\n\n>>>" + now + "\n")
 
     print('''*******************************************
 
-    Date: {a}-{b}-{c}
+    Date: {now}
 
     Hi there!
     Declare your objectives below. When you are done, type "Enter" with no input.
-    Hajime!'''.format(a={now.year}, b={now.month}, c={now.day}))
+    Hajime!
+
+    ''')
 
     taking_items()
 
     # recap
-    print('You listed:')
     for item in objectives:
-        print(item)
-    print("Gosh, that's a lot ! Better get started now. Go ! <3")
+        mylog.write("- " + item + "\n")
+    print(f"{len(objectives)} objectives were added to the log for today.")
+
 
 def taking_items():
     item = None
