@@ -34,4 +34,6 @@ def taking_items():
             objectives.append(item)
     declaration_over = True
 
-daily_start()
+# only execute when not imported in another script
+if __name__ == '__main__':
+    daily_start()
