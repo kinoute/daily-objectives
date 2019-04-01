@@ -1,6 +1,6 @@
 import datetime
 
-# coucou
+# program made by Guillaume
 objectives = []
 
 def daily_start():
